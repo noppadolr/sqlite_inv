@@ -21,13 +21,17 @@ return Application::configure(basePath: dirname(__DIR__))
                 // $router->middleware('web')
                 // ->group(base_path('routes/category.php'));
                 // $router->middleware('web')
-                // ->group(base_path('routes/product.php'));                
+                // ->group(base_path('routes/product.php'));
         },
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+
+            'aut' => \App\Http\Middleware\Authentication::class,
+
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

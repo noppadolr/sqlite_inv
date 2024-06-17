@@ -10,6 +10,8 @@
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('admin/assets/images/favicon.ico') }}">
+        <!-- Sweet Alert-->
+        <link href="{{ asset('admin/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 
 		<!-- Theme Config Js -->
 		<script src="{{ asset('admin/assets/js/head.js') }}"></script>
@@ -35,13 +37,13 @@
                         <!-- Logo -->
                         <div class="auth-brand text-center text-lg-start">
                             <div class="auth-brand">
-                                <a href="index.html" class="logo logo-dark text-center">
+                                <a href="" class="logo logo-dark text-center">
                                     <span class="logo-lg">
                                         <img src="{{ asset('admin/assets/images/logo-dark.png') }}" alt="" height="22">
                                     </span>
                                 </a>
-            
-                                <a href="index.html" class="logo logo-light text-center">
+
+                                <a href="" class="logo logo-light text-center">
                                     <span class="logo-lg">
                                         <img src="{{ asset('admin/assets/images/logo-light.png') }}" alt="" height="22">
                                     </span>
@@ -54,23 +56,23 @@
                         <p class="text-muted mb-4">Enter your username and password to access account.</p>
 
                         <!-- form -->
-                        <form action="#" method="POST" id="myForm">
+                        <form action="{{ route('login') }}" method="POST" id="myForm">
                             @csrf
                             <div class="mb-3 form-group">
-                                <label for="emailaddress" class="form-label">Username</label>
-                                <input class="form-control" type="text" id="username" required="" placeholder="Enter your email">
+                                <label for="username" class="form-label">Username</label>
+                                <input class="form-control" type="text" id="username" name="username" required="" placeholder="Enter your email">
                             </div>
                             <div class="mb-3 ">
                                 {{-- <a href="auth-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a> --}}
                                 <label for="password" class="form-label">Password</label>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
                                     <div class="input-group-text" data-password="false">
                                         <span class="password-eye"></span>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="checkbox-signin">
@@ -103,7 +105,7 @@
 
                         <!-- Footer-->
                         <footer class="footer footer-alt">
-                            <p class="text-muted">Don't have an account? <a href="auth-register-2.html" class="text-muted ms-1"><b>Sign Up</b></a></p>
+                            <p class="text-muted">Don't have an account? <a href="" class="text-muted ms-1"><b>Sign Up</b></a></p>
                         </footer>
 
                     </div> <!-- end .card-body -->
@@ -127,6 +129,9 @@
         <!-- end auth-fluid-->
 
         <!-- Authentication js -->
+        <script src="{{ asset('jquery-3.7.1.min.js') }}"></script>
+        <!-- Sweet Alerts js -->
+        <script src="{{ asset('admin/assets/libs/sweetalert2/sweetalert2.all.min.js') }}"></script>
         <script src="{{ asset('admin/assets/js/pages/authentication.init.js') }}"></script>
 
     </body>
